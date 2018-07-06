@@ -1,0 +1,11 @@
+c_compiler:
+- vs2015
+cxx_compiler:
+- vs2015
+m2w64_c_compiler:
+- m2w64-toolchain
+m2w64_cxx_compiler:
+- m2w64-toolchain
+zip_keys:
+- - c_compiler
+  - cxx_compiler
