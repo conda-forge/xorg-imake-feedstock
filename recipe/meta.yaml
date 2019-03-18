@@ -1,8 +1,8 @@
 {% set xorg_name = "imake" %}
 {% set xorg_category = "util" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.0.7" %}
-{% set sha256 = "690c2c4ac1fad2470a5ea73156cf930b8040dc821a0da4e322014a42c045f37e" %}
+{% set version = "1.0.8" %}
+{% set sha256 = "b8d2e416b3f29cd6482bcffaaf19286d32917a164d07102a0e531ccd41a2a702" %}
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
@@ -17,7 +17,7 @@ source:
     - windows.patch  # [win]
 
 build:
-  number: 1001
+  number: 0
   detect_binary_files_with_prefix: true
 
 requirements:
