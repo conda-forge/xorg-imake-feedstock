@@ -29,9 +29,12 @@ if [ -n "$CYGWIN_PREFIX" ] ; then
         --force
         --install
         -I "$mprefix/share/aclocal"
-        -I "$BUILD_PREFIX_M/Library/mingw-w64/share/aclocal"
+        -I "$BUILD_PREFIX_M/Library/usr/share/aclocal"
     )
     autoreconf "${autoreconf_args[@]}"
+
+    # Needed to make the configure script happy, it seems
+    export CPP=x86_64-w64-mingw32-cpp.exe
 fi
 
 export PKG_CONFIG_LIBDIR=$uprefix/lib/pkgconfig:$uprefix/share/pkgconfig
