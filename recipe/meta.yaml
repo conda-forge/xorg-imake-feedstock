@@ -1,24 +1,22 @@
 {% set xorg_name = "imake" %}
 {% set xorg_category = "util" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.0.8" %}
-{% set sha256 = "b8d2e416b3f29cd6482bcffaaf19286d32917a164d07102a0e531ccd41a2a702" %}
-{% set am_version = "1.15" %} # keep synchronized with build.sh
+{% set version = "1.0.10" %}
+{% set sha256 = "75decbcea8d7b354cf36adc9675e53c4790ee3de56a14bd87b42c8e8aad2ecf5" %}
+{% set am_version = "1.16" %} # keep synchronized with build.sh
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ xorg_name }}-{{ version }}.tar.bz2
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
   patches:
     - windows.patch  # [win]
 
 build:
-  number: 1
-  detect_binary_files_with_prefix: true
+  number: 0
 
 requirements:
   build:
@@ -31,16 +29,15 @@ requirements:
     - m2-base                      # [win]
     - make                         # [unix]
     - m2-make                      # [win]
-    - {{ compiler('c') }}          # [unix]
+    - {{ compiler("c") }}          # [unix]
     - {{ stdlib("c") }}            # [unix]
-    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler("m2w64_c") }}    # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler("cxx") }}        # [unix]
+    - {{ compiler("m2w64_cxx") }}  # [win]
   host:
     - xorg-util-macros
     - xorg-xorgproto
-  run:
 
 test:
   commands:
