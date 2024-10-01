@@ -1,6 +1,8 @@
---- imake.c.orig	2017-02-06 15:34:47.199474238 -0500
-+++ imake.c	2017-02-06 15:35:07.663653246 -0500
-@@ -160,7 +160,7 @@
+diff --git a/imake.c b/imake.c
+index 10350ea..3519585 100644
+--- a/imake.c
++++ b/imake.c
+@@ -160,7 +160,7 @@ in this Software without prior written authorization from The Open Group.
  #include <string.h>
  #include <ctype.h>
  #ifdef WIN32
@@ -9,11 +11,13 @@
  #endif
  #include <sys/types.h>
  #include <fcntl.h>
---- imakemdep.h.orig	2017-02-06 15:44:08.735302953 -0500
-+++ imakemdep.h	2017-02-06 15:44:11.710327597 -0500
-@@ -1422,7 +1422,7 @@
+diff --git a/imakemdep.h b/imakemdep.h
+index 12200d6..5e57050 100644
+--- a/imakemdep.h
++++ b/imakemdep.h
+@@ -1422,7 +1422,7 @@ struct symtab	predefs[] = {
  # endif /* MAKEDEPEND */
- 
+
  # ifndef MAKEDEPEND
 -#  if  defined (CROSSCOMPILE_CPP)
 +#  if !defined(CROSSCOMPILE) || defined (CROSSCOMPILE_CPP)
