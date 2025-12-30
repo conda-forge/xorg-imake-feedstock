@@ -1,8 +1,8 @@
 {% set xorg_name = "imake" %}
 {% set xorg_category = "util" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.0.10" %}
-{% set sha256 = "75decbcea8d7b354cf36adc9675e53c4790ee3de56a14bd87b42c8e8aad2ecf5" %}
+{% set version = "1.0.11" %}
+{% set sha256 = "55955527eaebe94633e4083d4fe5f2160a65fe4c6dafdee48b89fea5f1ca8a78" %}
 {% set am_version = "1.16" %} # keep synchronized with build.sh
 
 package:
