@@ -29,6 +29,7 @@ requirements:
     - m2-base                      # [win]
     - make                         # [unix]
     - m2-make                      # [win]
+    - gnuconfig  # [unix]
     - {{ compiler("c") }}          # [unix]
     - {{ stdlib("c") }}            # [unix]
     - {{ compiler("m2w64_c") }}    # [win]
